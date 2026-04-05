@@ -61,7 +61,7 @@
   }
   @media (max-width: 768px) {
     .hero { min-height: auto; padding: 7rem 1.5rem 4rem; }
-    .hero-inner { grid-template-columns: 1fr !important; gap: 2rem !important; max-width: 100% !important; }
+    .hero-inner { grid-template-columns: 1fr !important; gap: 2rem !important; max-width: 100% !important; } .hero-inner > div:last-child { display: none; }
     .hero h1 { font-size: 2.4rem !important; }
   }
   .hero-bg {
@@ -234,7 +234,7 @@
 
   <div class="hero">
     <div class="hero-bg"></div>
-    <div class="hero-inner" style="position:relative; z-index:1; display:grid; grid-template-columns: 1fr 420px; gap: 4rem; align-items: center; max-width: 1200px;">
+    <div class="hero-inner" style="position:relative; z-index:1; display:grid; grid-template-columns: 1fr 380px 220px; gap: 2.5rem; align-items: center; max-width: 1200px;">
       <div>
         <p class="hero-tag">Natural Septic Care, Redefined</p>
         <h1>Your system.<br><em>Maintained.</em><br>Every month.</h1>
@@ -279,6 +279,20 @@
         
       </div>
     </div>
+      <div style="display: flex; flex-direction: column; gap: 1.5rem; justify-content: center;">
+        <div style="border: 1px solid rgba(122,154,126,0.3); border-radius: 16px; padding: 2rem 1.75rem; background: rgba(122,154,126,0.05);">
+          <div style="font-size: 2.5rem; margin-bottom: 0.75rem;">🐾</div>
+          <div style="font-family: var(--font-display); font-size: 1.2rem; color: var(--cream); margin-bottom: 0.4rem;">Pet & Kid Friendly</div>
+          <div style="font-size: 0.8rem; color: var(--sage-light); font-weight: 500; margin-bottom: 0.5rem; text-transform: uppercase; letter-spacing: 0.08em;">Guaranteed</div>
+          <div style="font-size: 0.8rem; color: var(--text-muted); line-height: 1.6;">Biosafety level 1 bacteria. No harsh chemicals. No toxins. Safe for everyone in your home.</div>
+        </div>
+        <div style="border: 1px solid rgba(122,154,126,0.3); border-radius: 16px; padding: 2rem 1.75rem; background: rgba(122,154,126,0.05);">
+          <div style="font-size: 2.5rem; margin-bottom: 0.75rem;">🇺🇸</div>
+          <div style="font-family: var(--font-display); font-size: 1.2rem; color: var(--cream); margin-bottom: 0.4rem;">Made in the USA</div>
+          <div style="font-size: 0.8rem; color: var(--sage-light); font-weight: 500; margin-bottom: 0.5rem; text-transform: uppercase; letter-spacing: 0.08em;">Domestic Manufacturing</div>
+          <div style="font-size: 0.8rem; color: var(--text-muted); line-height: 1.6;">Manufactured in Lawrenceville, GA under strict quality controls. Proudly American made.</div>
+        </div>
+      </div>
   </div>
 
   <!-- Why Maintane™ -->
@@ -340,22 +354,7 @@
           <div class="product-price">$47.50</div>
           <div class="product-price-sub">Free shipping on orders over $35</div>
           <a class="btn-primary buy-btn" href="#">Buy Now</a>
-        <div style="display: flex; flex-direction: column; gap: 0.6rem; margin-top: 1.25rem;">
-          <div style="display: flex; align-items: center; gap: 0.75rem; background: rgba(122,154,126,0.08); border: 1px solid rgba(122,154,126,0.2); border-radius: 10px; padding: 0.65rem 1rem;">
-            <span style="font-size: 1.2rem;">🐾</span>
-            <div>
-              <div style="font-size: 0.78rem; font-weight: 500; color: var(--cream);">Pet & Kid Friendly — Guaranteed</div>
-              <div style="font-size: 0.7rem; color: var(--text-muted);">Biosafety level 1 · No harsh chemicals</div>
-            </div>
-          </div>
-          <div style="display: flex; align-items: center; gap: 0.75rem; background: rgba(122,154,126,0.08); border: 1px solid rgba(122,154,126,0.2); border-radius: 10px; padding: 0.65rem 1rem;">
-            <span style="font-size: 1.2rem;">🇺🇸</span>
-            <div>
-              <div style="font-size: 0.78rem; font-weight: 500; color: var(--cream);">Made in the USA</div>
-              <div style="font-size: 0.7rem; color: var(--text-muted);">Manufactured in Lawrenceville, GA</div>
-            </div>
-          </div>
-        </div>
+
         </div>
       </div>
     </div>
