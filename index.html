@@ -471,8 +471,9 @@
       <p class="section-tag">The method</p>
       <h1 class="section-title">How Maintane works</h1>
       <p class="section-sub">A simple monthly ritual. Once it starts, it keeps itself going.</p>
+      <p style="font-size:0.78rem;color:#5a8a5a;font-family:system-ui;margin-top:0.5rem;">Click on each step for more information</p>
     </div>
-    <div class="hiw-steps" style="max-width:700px;margin:0 auto;padding:0 1rem 3rem;">
+    <div class="hiw-steps" style="max-width:900px;margin:0 auto;padding:0 1rem 3rem;display:grid;grid-template-columns:1fr 1fr;gap:2rem;align-items:center;">
       <svg width="100%" viewBox="0 0 680 530" xmlns="http://www.w3.org/2000/svg" style="display:block;">
         <defs>
           <marker id="arr" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
@@ -513,6 +514,31 @@
           <text x="340" y="414" text-anchor="middle" font-size="9" fill="#5a8a5a" font-family="system-ui">to work</text>
         </g>
         <g id="n5" style="cursor:pointer" onclick="showStep(5)">
+          <circle cx="227" cy="327" r="48" fill="#1e3a1e" stroke="#4a7a4a" stroke-width="1.5"/>
+          <text x="227" y="323" text-anchor="middle" font-size="22" fill="#7ab87a" font-family="system-ui" font-weight="bold">5</text>
+          <text x="227" y="337" text-anchor="middle" font-size="9" fill="#5a8a5a" font-family="system-ui">results</text>
+          <text x="227" y="349" text-anchor="middle" font-size="9" fill="#5a8a5a" font-family="system-ui">build</text>
+        </g>
+        <g id="n6" style="cursor:pointer" onclick="showStep(6)">
+          <circle cx="227" cy="197" r="48" fill="#1e3a1e" stroke="#4a7a4a" stroke-width="1.5"/>
+          <text x="227" y="193" text-anchor="middle" font-size="22" fill="#7ab87a" font-family="system-ui" font-weight="bold">6</text>
+          <text x="227" y="207" text-anchor="middle" font-size="9" fill="#5a8a5a" font-family="system-ui">reorder</text>
+          <text x="227" y="219" text-anchor="middle" font-size="9" fill="#5a8a5a" font-family="system-ui">+ repeat</text>
+        </g>
+      </svg>
+      <div style="display:flex;flex-direction:column;justify-content:center;gap:1.5rem;">
+        <div style="background:rgba(255,255,255,0.04);border:1px solid #3a5a3a;border-radius:12px;padding:2rem;">
+          <div id="d-num" style="width:44px;height:44px;border-radius:50%;border:1px solid #5a8a5a;display:flex;align-items:center;justify-content:center;color:#7ab87a;font-size:1.1rem;font-family:system-ui;margin-bottom:1rem;">1</div>
+          <h3 id="d-title" style="font-size:1.2rem;color:var(--cream);margin-bottom:0.6rem;font-family:var(--font-display);">Your tub arrives</h3>
+          <p id="d-body" style="font-size:0.88rem;color:#9ab89a;line-height:1.7;font-family:system-ui;">Order once and your tub ships within 1-2 business days. Each tub contains enough treatments to keep your system protected for months.</p>
+        </div>
+      </div>
+      <script>
+        var maintaneSteps=[{num:1,title:"Your tub arrives",body:"Order once and your tub ships within 1-2 business days. Each tub contains enough treatments to keep your system protected for months."},{num:2,title:"Set a monthly reminder",body:"Pick any day of the month. Set a recurring reminder on your phone. That's your Maintane day. The whole routine takes under 5 minutes."},{num:3,title:"One scoop per toilet, then flush",body:"Use the included scoop. One level scoop per toilet. Drop it in, flush. The powder dissolves instantly and the living bacteria travel through your pipes."},{num:4,title:"Bacteria go to work",body:"Within 24-72 hours, 3 billion CFU across 6 bacterial strains establish colonies in your tank, breaking down waste, grease, and organic buildup continuously."},{num:5,title:"Results build over time",body:"Most customers notice fewer odors and faster drainage within 2-3 months. By month 6, your system runs the way it was designed to."},{num:6,title:"Running low? Reorder and repeat",body:"When your tub is nearly empty, reorder before your next Maintane day. The cycle continues - your system stays protected year-round."}];
+        function showStep(n){var s=maintaneSteps[n-1];document.getElementById("d-num").textContent=s.num;document.getElementById("d-title").textContent=s.title;document.getElementById("d-body").textContent=s.body;for(var i=1;i<=6;i++){var c=document.getElementById("n"+i).querySelector("circle");if(i===n){c.setAttribute("fill","#2a5a2a");c.setAttribute("stroke","#7ab87a");c.setAttribute("stroke-width","2");}else{c.setAttribute("fill","#1e3a1e");c.setAttribute("stroke","#4a7a4a");c.setAttribute("stroke-width","1.5");}}}
+        showStep(1);
+      </script>
+    </div>
           <circle cx="227" cy="327" r="48" fill="#1e3a1e" stroke="#4a7a4a" stroke-width="1.5"/>
           <text x="227" y="323" text-anchor="middle" font-size="22" fill="#7ab87a" font-family="system-ui" font-weight="bold">5</text>
           <text x="227" y="337" text-anchor="middle" font-size="9" fill="#5a8a5a" font-family="system-ui">results</text>
