@@ -226,8 +226,8 @@
 
   /* HIW STEP CARDS */
   .hiw-cards {
-    display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.5rem;
-    max-width: 1100px; margin: 3rem auto 0; padding: 0 1.5rem;
+    display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.25rem;
+    max-width: 1100px; margin: 2.5rem auto 0; padding: 0 1.5rem;
   }
   .hiw-card {
     background: rgba(122,154,126,0.04); border: 1px solid rgba(122,154,126,0.15);
@@ -689,6 +689,14 @@ function showPage(name) {
   document.getElementById('page-' + name).classList.add('active');
   window.scrollTo({ top: 0, behavior: 'smooth' });
 }
+(function() {
+  var hash = location.hash.replace('#', '');
+  if (hash && document.getElementById('page-' + hash)) showPage(hash);
+})();
+window.addEventListener('hashchange', function() {
+  var hash = location.hash.replace('#', '');
+  if (hash && document.getElementById('page-' + hash)) showPage(hash);
+});
 function toggleMobileMenu() {
   document.getElementById('mobileMenu').classList.toggle('open');
   document.querySelector('.hamburger').classList.toggle('active');
