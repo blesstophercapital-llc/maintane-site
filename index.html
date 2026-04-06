@@ -467,51 +467,76 @@
 
 <!-- ========== HOW IT WORKS ========== -->
 <div class="page" id="page-how">
-  <div class="hiw-hero">
-    <div class="hero-bg"></div>
-    <div style="position:relative; z-index:1;">
+    <div class="hiw-hero">
       <p class="section-tag">The method</p>
       <h1 class="section-title">How Maintane works</h1>
-      <p class="section-sub" style="margin: 0 auto;">A simple monthly ritual backed by real microbiology.</p>
+      <p class="section-sub">A simple monthly ritual. Once it starts, it keeps itself going.</p>
     </div>
-  </div>
-  <section>
-    <div class="hiw-steps" style="margin-top: 1rem;">
-      <div class="hiw-step">
-        <div class="hiw-step-num">1</div>
+    <div class="hiw-steps" style="max-width:700px;margin:0 auto;padding:0 1rem 3rem;">
+      <svg width="100%" viewBox="0 0 680 530" xmlns="http://www.w3.org/2000/svg" style="display:block;">
+        <defs>
+          <marker id="arr" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+            <path d="M2 1L8 5L2 9" fill="none" stroke="context-stroke" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+          </marker>
+        </defs>
+        <circle cx="340" cy="262" r="110" fill="none" stroke="#2a4a2a" stroke-width="1" stroke-dasharray="4 4"/>
+        <text x="340" y="255" text-anchor="middle" font-size="13" fill="#4a7a4a" font-family="system-ui">your septic</text>
+        <text x="340" y="272" text-anchor="middle" font-size="13" fill="#4a7a4a" font-family="system-ui">system</text>
+        <text x="340" y="290" text-anchor="middle" font-size="11" fill="#3a5a3a" font-family="system-ui">protected year-round</text>
+        <path d="M 388 148 A 130 130 0 0 1 453 197" fill="none" stroke="#5a8a5a" stroke-width="1.2" marker-end="url(#arr)"/>
+        <path d="M 501 210 A 130 130 0 0 1 501 314" fill="none" stroke="#5a8a5a" stroke-width="1.2" marker-end="url(#arr)"/>
+        <path d="M 453 327 A 130 130 0 0 1 388 378" fill="none" stroke="#5a8a5a" stroke-width="1.2" marker-end="url(#arr)"/>
+        <path d="M 292 378 A 130 130 0 0 1 227 327" fill="none" stroke="#5a8a5a" stroke-width="1.2" marker-end="url(#arr)"/>
+        <path d="M 179 314 A 130 130 0 0 1 179 210" fill="none" stroke="#5a8a5a" stroke-width="1.2" marker-end="url(#arr)"/>
+        <path d="M 227 197 A 130 130 0 0 1 292 148" fill="none" stroke="#5a8a5a" stroke-width="1.2" marker-end="url(#arr)"/>
+        <g id="n1" style="cursor:pointer" onclick="showStep(1)">
+          <circle cx="340" cy="132" r="48" fill="#1e3a1e" stroke="#4a7a4a" stroke-width="1.5"/>
+          <text x="340" y="128" text-anchor="middle" font-size="22" fill="#7ab87a" font-family="system-ui" font-weight="bold">1</text>
+          <text x="340" y="146" text-anchor="middle" font-size="9" fill="#5a8a5a" font-family="system-ui">tub arrives</text>
+        </g>
+        <g id="n2" style="cursor:pointer" onclick="showStep(2)">
+          <circle cx="453" cy="197" r="48" fill="#1e3a1e" stroke="#4a7a4a" stroke-width="1.5"/>
+          <text x="453" y="193" text-anchor="middle" font-size="22" fill="#7ab87a" font-family="system-ui" font-weight="bold">2</text>
+          <text x="453" y="207" text-anchor="middle" font-size="9" fill="#5a8a5a" font-family="system-ui">set monthly</text>
+          <text x="453" y="219" text-anchor="middle" font-size="9" fill="#5a8a5a" font-family="system-ui">reminder</text>
+        </g>
+        <g id="n3" style="cursor:pointer" onclick="showStep(3)">
+          <circle cx="453" cy="327" r="48" fill="#1e3a1e" stroke="#4a7a4a" stroke-width="1.5"/>
+          <text x="453" y="323" text-anchor="middle" font-size="22" fill="#7ab87a" font-family="system-ui" font-weight="bold">3</text>
+          <text x="453" y="337" text-anchor="middle" font-size="9" fill="#5a8a5a" font-family="system-ui">scoop</text>
+          <text x="453" y="349" text-anchor="middle" font-size="9" fill="#5a8a5a" font-family="system-ui">+ flush</text>
+        </g>
+        <g id="n4" style="cursor:pointer" onclick="showStep(4)">
+          <circle cx="340" cy="392" r="48" fill="#1e3a1e" stroke="#4a7a4a" stroke-width="1.5"/>
+          <text x="340" y="388" text-anchor="middle" font-size="22" fill="#7ab87a" font-family="system-ui" font-weight="bold">4</text>
+          <text x="340" y="402" text-anchor="middle" font-size="9" fill="#5a8a5a" font-family="system-ui">bacteria go</text>
+          <text x="340" y="414" text-anchor="middle" font-size="9" fill="#5a8a5a" font-family="system-ui">to work</text>
+        </g>
+        <g id="n5" style="cursor:pointer" onclick="showStep(5)">
+          <circle cx="227" cy="327" r="48" fill="#1e3a1e" stroke="#4a7a4a" stroke-width="1.5"/>
+          <text x="227" y="323" text-anchor="middle" font-size="22" fill="#7ab87a" font-family="system-ui" font-weight="bold">5</text>
+          <text x="227" y="337" text-anchor="middle" font-size="9" fill="#5a8a5a" font-family="system-ui">results</text>
+          <text x="227" y="349" text-anchor="middle" font-size="9" fill="#5a8a5a" font-family="system-ui">build</text>
+        </g>
+        <g id="n6" style="cursor:pointer" onclick="showStep(6)">
+          <circle cx="227" cy="197" r="48" fill="#1e3a1e" stroke="#4a7a4a" stroke-width="1.5"/>
+          <text x="227" y="193" text-anchor="middle" font-size="22" fill="#7ab87a" font-family="system-ui" font-weight="bold">6</text>
+          <text x="227" y="207" text-anchor="middle" font-size="9" fill="#5a8a5a" font-family="system-ui">reorder</text>
+          <text x="227" y="219" text-anchor="middle" font-size="9" fill="#5a8a5a" font-family="system-ui">+ repeat</text>
+        </g>
+      </svg>
+      <div style="background:rgba(255,255,255,0.04);border:1px solid #3a5a3a;border-radius:12px;padding:1.2rem 1.5rem;display:flex;gap:1.2rem;align-items:flex-start;margin-top:1rem;">
+        <div id="d-num" style="width:36px;height:36px;border-radius:50%;border:1px solid #5a8a5a;display:flex;align-items:center;justify-content:center;color:#7ab87a;font-size:0.9rem;flex-shrink:0;font-family:system-ui;">1</div>
         <div>
-          <div class="hiw-step-title">Your tub arrives</div>
-          <div class="hiw-step-body">Order once and your tub ships within 1–2 business days. Each tub contains enough treatments to keep your system protected for months.</div>
+          <h3 id="d-title" style="font-size:1rem;color:var(--cream);margin-bottom:0.25rem;">Your tub arrives</h3>
+          <p id="d-body" style="font-size:0.82rem;color:#9ab89a;line-height:1.6;font-family:system-ui;">Order once and your tub ships within 1-2 business days. Each tub contains enough treatments to keep your system protected for months.</p>
         </div>
       </div>
-      <div class="hiw-step">
-        <div class="hiw-step-num">2</div>
-        <div>
-          <div class="hiw-step-title">Set a monthly reminder</div>
-          <div class="hiw-step-body">Pick any day of the month — the 1st, payday, whatever's easy to remember. Set a recurring reminder on your phone. That's your Maintane™ day. The whole routine takes under 5 minutes.</div>
-        </div>
-      </div>
-      <div class="hiw-step">
-        <div class="hiw-step-num">3</div>
-        <div>
-          <div class="hiw-step-title">One scoop per toilet, then flush</div>
-          <div class="hiw-step-body">Use the included scoop. One level scoop per toilet. Drop it in, flush. The powder dissolves instantly and the living bacteria travel through your pipes into your septic tank, where they begin colonizing within hours.</div>
-        </div>
-      </div>
-      <div class="hiw-step">
-        <div class="hiw-step-num">4</div>
-        <div>
-          <div class="hiw-step-title">The bacteria go to work</div>
-          <div class="hiw-step-body">Within 24–72 hours, 3 billion CFU across 6 bacterial strains establish colonies in your tank. They break down waste, grease, paper, and organic buildup continuously. Monthly treatments keep the colony strong between doses.</div>
-        </div>
-      </div>
-      <div class="hiw-step">
-        <div class="hiw-step-num">5</div>
-        <div>
-          <div class="hiw-step-title">Results build over time</div>
-          <div class="hiw-step-body">Most customers notice fewer odors and faster drainage within the first 2–3 months. By month 6, your tank inspection will show measurably cleaner conditions. Consistent monthly use is what separates Maintane™ from one-time shock treatments.</div>
-        </div>
-      </div>
+      <script>
+        var maintaneSteps=[{num:1,title:"Your tub arrives",body:"Order once and your tub ships within 1-2 business days. Each tub contains enough treatments to keep your system protected for months."},{num:2,title:"Set a monthly reminder",body:"Pick any day of the month. Set a recurring reminder on your phone. That's your Maintane day. The whole routine takes under 5 minutes."},{num:3,title:"One scoop per toilet, then flush",body:"Use the included scoop. One level scoop per toilet. Drop it in, flush. The powder dissolves instantly and the living bacteria travel through your pipes."},{num:4,title:"Bacteria go to work",body:"Within 24-72 hours, 3 billion CFU across 6 bacterial strains establish colonies in your tank, breaking down waste, grease, and organic buildup continuously."},{num:5,title:"Results build over time",body:"Most customers notice fewer odors and faster drainage within 2-3 months. By month 6, your system runs the way it was designed to."},{num:6,title:"Running low? Reorder and repeat",body:"When your tub is nearly empty, reorder before your next Maintane day. The cycle continues - your system stays protected year-round."}];
+        function showStep(n){var s=maintaneSteps[n-1];document.getElementById("d-num").textContent=s.num;document.getElementById("d-title").textContent=s.title;document.getElementById("d-body").textContent=s.body;for(var i=1;i<=6;i++){var c=document.getElementById("n"+i).querySelector("circle");if(i===n){c.setAttribute("fill","#2a5a2a");c.setAttribute("stroke","#7ab87a");c.setAttribute("stroke-width","2");}else{c.setAttribute("fill","#1e3a1e");c.setAttribute("stroke","#4a7a4a");c.setAttribute("stroke-width","1.5");}}}
+        showStep(1);
+      </script>
     </div>
 
     <div class="hiw-science-strip">
