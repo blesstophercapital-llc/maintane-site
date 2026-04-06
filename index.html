@@ -616,6 +616,9 @@ function showPage(name) {
   document.getElementById('page-' + name).classList.add('active');
   window.scrollTo({ top: 0, behavior: 'smooth' });
 }
+// Handle hash-based routing from blog nav
+const hash = window.location.hash.replace('#','');
+if (['how','contact','policy'].includes(hash)) showPage(hash);
 </script>
 </body>
 </html>
