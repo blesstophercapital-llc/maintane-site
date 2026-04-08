@@ -49,7 +49,7 @@
   .article-wrap {
     max-width: 720px;
     margin: 0 auto;
-    padding: 10rem 3rem 6rem;
+    padding: 3rem 3rem 6rem;
   }
 
   .article-back {
@@ -154,7 +154,7 @@
     .nav-links { display: none; }
     .nav-cta { display: none; }
     .hamburger { display: block; }
-    .article-wrap { padding: 6rem 1.5rem 4rem; }
+    .article-wrap { padding: 3rem 1.5rem 4rem; }
     .related-grid { grid-template-columns: 1fr; }
     footer { padding: 2rem 1.5rem; }
   }
@@ -329,7 +329,7 @@
 function toggleMobileMenu(){document.getElementById('mobileMenu').classList.toggle('open');document.querySelector('.hamburger').classList.toggle('active');document.body.style.overflow=document.getElementById('mobileMenu').classList.contains('open')?'hidden':'';}
 
 (function(){var t=new Date("2026-05-15T00:00:00-04:00").getTime();function k(){var n=Date.now(),d=Math.max(0,t-n);document.getElementById("cd-days").textContent=Math.floor(d/864e5);document.getElementById("cd-hours").textContent=Math.floor(d%864e5/36e5);document.getElementById("cd-mins").textContent=Math.floor(d%36e5/6e4);document.getElementById("cd-secs").textContent=Math.floor(d%6e4/1e3);if(d>0)setTimeout(k,1e3);}k();})();
-function submitLaunchEmail(e){e.preventDefault();var email=document.getElementById("launchEmailInput").value;var form=document.getElementById("launchForm");fetch("https://a.klaviyo.com/client/subscriptions/?company_id=UnVzdk",{method:"POST",headers:{"Content-Type":"application/json","revision":"2024-10-15"},body:JSON.stringify({data:{type:"subscription",attributes:{custom_source:"Website Launch Banner",profile:{data:{type:"profile",attributes:{email:email}}}},relationships:{list:{data:{type:"list",id:"Vdj2X8"}}}}})}).then(function(){form.innerHTML="<span class="launch-success">You're on the list!</span>";}).catch(function(){form.innerHTML="<span class="launch-success">You're on the list!</span>";});return false;}
+function submitLaunchEmail(e){e.preventDefault();var email=document.getElementById("launchEmailInput").value;var form=document.getElementById("launchForm");fetch("https://a.klaviyo.com/client/subscriptions/?company_id=UnVzdk",{method:"POST",headers:{"Content-Type":"application/json","revision":"2024-10-15"},body:JSON.stringify({data:{type:"subscription",attributes:{custom_source:"Website Launch Banner",profile:{data:{type:"profile",attributes:{email:email}}}},relationships:{list:{data:{type:"list",id:"Vdj2X8"}}}}})}).then(function(){form.innerHTML='<span class="launch-success">You\x27re on the list!</span>';}).catch(function(){form.innerHTML='<span class="launch-success">You\x27re on the list!</span>';});return false;}
 </script>
 </body>
 </html>
