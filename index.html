@@ -959,35 +959,6 @@ function submitLaunchEmail(e) {
 /*<![CDATA[*/
 (function () {
   var scriptURL = 'https://sdks.shopifycdn.com/buy-button/latest/buy-button-storefront.min.js';
-  var FB = 'https://aykixg-rn.myshopify.com/cart/53069455917419:1';
-  var FB_NODES = ['product-component-1776173676536','product-component-why-maintane','product-component-hiw'];
-  var fbRendered = {};
-  var fbTimers = {};
-  function fbHasIframe(id){var el=document.getElementById(id);return !!(el&&el.querySelector('iframe'));}
-  function fbShow(id){
-    var el=document.getElementById(id);
-    if(!el||fbRendered[id]||fbHasIframe(id)||el.querySelector('[data-shopify-fb]'))return;
-    var a=document.createElement('a');
-    a.href=FB;a.textContent='Buy now';a.setAttribute('data-shopify-fb','');
-    a.style.cssText='display:block;width:100%;box-sizing:border-box;text-align:center;font-family:"Droid Sans",sans-serif;font-weight:bold;font-size:14px;background-color:#3b5c3a;color:#fff;text-decoration:none;border-radius:15px;padding:13px 40px;cursor:pointer;transition:background-color 0.2s;';
-    a.onmouseover=function(){a.style.backgroundColor='#355334';};
-    a.onmouseout=function(){a.style.backgroundColor='#3b5c3a';};
-    el.appendChild(a);
-  }
-  function fbHide(id){
-    var el=document.getElementById(id);
-    if(!el)return;
-    var f=el.querySelector('[data-shopify-fb]');
-    if(f)f.remove();
-  }
-  FB_NODES.forEach(function(id){
-    fbTimers[id]=setTimeout(function(){fbShow(id);},3000);
-    var watchEl=document.getElementById(id);
-    if(watchEl&&window.MutationObserver){
-      var mo=new MutationObserver(function(){if(fbHasIframe(id)){fbRendered[id]=true;clearTimeout(fbTimers[id]);fbHide(id);mo.disconnect();}});
-      mo.observe(watchEl,{childList:true,subtree:true});
-    }
-  });
   if (window.ShopifyBuy) {
     if (window.ShopifyBuy.UI) {
       ShopifyBuyInit();
@@ -1001,9 +972,8 @@ function submitLaunchEmail(e) {
     var script = document.createElement('script');
     script.async = true;
     script.src = scriptURL;
-    script.onload = ShopifyBuyInit;
-    script.onerror = function(){FB_NODES.forEach(function(id){clearTimeout(fbTimers[id]);fbShow(id);});};
     (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(script);
+    script.onload = ShopifyBuyInit;
   }
   function ShopifyBuyInit() {
     var client = ShopifyBuy.buildClient({
