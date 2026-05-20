@@ -698,69 +698,99 @@
     max-width: 640px;
     margin: 16px auto 64px;
   }
-  .why-comparison {
-    display: grid;
-    grid-template-columns: 40% 30% 30%;
+  .stack-table-wrap {
     width: 100%;
+    overflow-x: auto;
+    border: 1px solid rgba(196, 168, 130, 0.28);
+    border-radius: 28px;
+    background: rgba(255, 255, 255, 0.04);
+    box-shadow: 0 24px 70px rgba(0, 0, 0, 0.14);
+  }
+  .stack-comparison {
+    width: 100%;
+    min-width: 900px;
     border-collapse: collapse;
     border-spacing: 0;
-  }
-  .why-comparison thead,
-  .why-comparison tbody,
-  .why-comparison tr { display: contents; }
-  .why-comparison th,
-  .why-comparison td {
-    padding: 20px 16px;
     font-family: 'DM Sans', system-ui, sans-serif;
+  }
+  .stack-comparison th,
+  .stack-comparison td {
+    padding: 18px 14px;
     text-align: center;
-    border-bottom: 1px solid rgba(250, 246, 240, 0.15);
+    border-bottom: 1px solid rgba(250, 246, 240, 0.14);
     box-sizing: border-box;
   }
-  .why-comparison thead th {
-    text-transform: uppercase;
+  .stack-comparison thead th {
+    color: rgba(250, 246, 240, 0.7);
+    font-size: 0.74rem;
+    font-weight: 900;
+    line-height: 1.15;
     letter-spacing: 0.08em;
-    font-size: 0.85rem;
-    padding-top: 24px;
-    padding-bottom: 24px;
+    text-transform: uppercase;
   }
-  .why-comparison thead th.col-features {
-    color: rgba(250, 246, 240, 0.6);
-    font-weight: 500;
+  .stack-comparison tbody th {
+    width: 24%;
+    color: #FAF6F0;
+    font-size: 0.95rem;
+    font-weight: 800;
+    line-height: 1.35;
     text-align: left;
   }
-  .why-comparison thead th.col-other {
-    color: rgba(250, 246, 240, 0.6);
-    font-weight: 500;
+  .stack-brand {
+    display: inline-flex;
+    min-height: 44px;
+    align-items: center;
+    justify-content: center;
+    padding: 0.55rem 0.75rem;
+    border-radius: 999px;
+    background: rgba(250, 246, 240, 0.08);
+    white-space: nowrap;
   }
-  .why-comparison thead th.col-maintane {
+  .stack-comparison .stack-maintane {
     color: #FAF6F0;
-    font-weight: 600;
-  }
-  .why-comparison tbody th {
-    text-align: left;
-    color: #FAF6F0;
-    font-size: 1.05rem;
-    font-weight: 400;
-  }
-  /* Maintane column tint + 2px Forest Green frame */
-  .why-comparison .col-maintane {
-    background: #4A6B48;
+    background: rgba(74, 107, 72, 0.92);
     border-left: 2px solid #C4A882;
     border-right: 2px solid #C4A882;
   }
-  .why-comparison thead .col-maintane {
+  .stack-comparison thead .stack-maintane {
     border-top: 2px solid #C4A882;
   }
-  .why-comparison tbody tr:last-child th,
-  .why-comparison tbody tr:last-child td { border-bottom: none; }
-  .why-comparison tbody tr:last-child .col-maintane {
+  .stack-comparison tbody tr:last-child th,
+  .stack-comparison tbody tr:last-child td { border-bottom: none; }
+  .stack-comparison tbody tr:last-child .stack-maintane {
     border-bottom: 2px solid #C4A882;
   }
-  .why-icon {
-    width: 24px;
-    height: 24px;
-    display: inline-block;
-    vertical-align: middle;
+  .stack-yes {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 30px;
+    height: 30px;
+    border-radius: 999px;
+    color: #2C2417;
+    background: #C4A882;
+    font-weight: 900;
+  }
+  .stack-no {
+    color: rgba(250, 246, 240, 0.45);
+    font-size: 1.3rem;
+    font-weight: 900;
+  }
+  .stack-muted {
+    display: block;
+    max-width: 128px;
+    margin: 0 auto;
+    color: rgba(250, 246, 240, 0.58);
+    font-size: 0.78rem;
+    line-height: 1.35;
+  }
+  .stack-footnote {
+    margin: 16px 0 0;
+    color: rgba(250, 246, 240, 0.58);
+    font-family: 'DM Sans', system-ui, sans-serif;
+    font-size: 0.75rem;
+    line-height: 1.55;
+    text-align: center;
   }
   /* CTA */
   .why-cta {
@@ -1064,7 +1094,7 @@
     [data-solution-anim] { opacity: 1; transform: none; transition: none; }
   }
 
-  /* ── Phase 2.5a: Solution full-width card + 2-col grid ── */
+  /* ── Phase 2.5a: Solution full-width proof stack ── */
   .solution-inner {
     max-width: 1280px;
     margin: 0 auto;
@@ -1074,25 +1104,27 @@
   .solution-sub { max-width: 640px !important; }
   .solution-grid {
     display: grid;
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: minmax(0, 1fr);
     align-items: start;
+    gap: clamp(42px, 5vw, 72px);
     margin-top: 0;
   }
-  /* Subtle vertical hairline between columns + interior padding for breathing room */
+  /* Cards lead with the biology proof, then the comparison table closes the argument. */
   .science-block {
-    padding-right: 60px;
-    border-right: 1px solid rgba(196, 168, 130, 0.18);
+    max-width: 1120px;
+    margin: 0 auto;
   }
   .comparison-block {
-    padding-left: 60px;
+    width: 100%;
+    max-width: 1180px;
+    margin: 0 auto;
   }
-  /* Tighter strain card padding + child sizes for narrower column */
-  .strain-grid { gap: 16px; margin: 0; }
-  .strain-card { padding: 24px 18px; }
+  .strain-grid { gap: 18px; margin: 0; }
+  .strain-card { padding: 28px 24px; }
   .strain-num { margin-bottom: 12px; }
-  .strain-name { font-size: 1rem; margin-bottom: 8px; hyphens: auto; }
-  .strain-target { font-size: 0.75rem; margin-bottom: 14px; }
-  .strain-role { font-size: 0.88rem; line-height: 1.55; }
+  .strain-name { font-size: 1.08rem; margin-bottom: 8px; hyphens: auto; }
+  .strain-target { font-size: 0.78rem; margin-bottom: 14px; }
+  .strain-role { font-size: 0.92rem; line-height: 1.55; }
   /* Science claim block — left-aligned in narrower column */
   .science-claim {
     text-align: left !important;
@@ -1112,55 +1144,64 @@
     .solution-sub { font-size: 1rem; margin-bottom: 56px; }
     .block-headline { font-size: 1.6rem; }
     .block-intro { font-size: 1rem; margin-bottom: 40px; }
-    .strain-grid { grid-template-columns: 1fr; }
-    .strain-card { padding: 28px 24px; }
-    .strain-name { font-size: 1.15rem; }
+    .strain-grid {
+      grid-template-columns: minmax(0, 1fr);
+      gap: 16px;
+      width: 100%;
+      max-width: 100%;
+      overflow: visible;
+    }
+    .strain-card {
+      width: 100%;
+      min-width: 0;
+      max-width: 100%;
+      padding: 28px 24px;
+    }
+    .strain-name {
+      font-size: 1.15rem;
+      overflow-wrap: anywhere;
+      word-break: normal;
+    }
+    .strain-target,
+    .strain-role {
+      overflow-wrap: break-word;
+    }
     .solution-divider { margin: 64px auto; }
     .solution-cta { margin-top: 56px; }
-    /* Phase 2.5a mobile: stack 2-col grid + flip vertical divider to horizontal */
+    /* Phase 2.5a mobile: proof cards stay above the comparison table */
     .solution-inner { max-width: 100%; }
-    .solution-grid { grid-template-columns: 1fr; }
+    .solution-grid {
+      grid-template-columns: minmax(0, 1fr);
+      width: 100%;
+      max-width: 100%;
+      overflow: visible;
+    }
     .science-block {
-      padding-right: 0;
-      border-right: none;
-      padding-bottom: 64px;
-      border-bottom: 1px solid rgba(196, 168, 130, 0.18);
+      min-width: 0;
+      max-width: 100%;
     }
     .comparison-block {
-      padding-left: 0;
-      padding-top: 64px;
+      min-width: 0;
+      max-width: 100%;
     }
     .strain-card { padding: 24px 20px; }
     .why-sub { font-size: 1rem; margin-bottom: 40px; }
-    .why-comparison { display: block; }
-    .why-comparison thead { display: none; }
-    .why-comparison tbody { display: block; }
-    .why-comparison tbody tr {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      grid-template-rows: auto auto;
-      padding: 20px 0;
-      border-bottom: 1px solid rgba(250, 246, 240, 0.15);
+    .stack-table-wrap {
+      border-radius: 22px;
+      margin-left: -12px;
+      margin-right: -12px;
     }
-    .why-comparison tbody tr:last-child { border-bottom: none; }
-    .why-comparison tbody th {
-      grid-column: 1 / -1;
-      text-align: center;
-      padding: 0 0 12px 0;
-      font-size: 1rem;
-      border: none;
+    .stack-comparison { min-width: 820px; }
+    .stack-comparison th,
+    .stack-comparison td {
+      padding: 15px 12px;
     }
-    .why-comparison tbody td {
-      padding: 12px 0;
-      border: none;
-      font-size: 0.8rem;
+    .stack-comparison tbody th {
+      font-size: 0.88rem;
     }
-    .why-comparison tbody td.col-other { background: transparent; }
-    .why-comparison tbody td.col-maintane {
-      background: #4A6B48;
-      border: none;
+    .stack-muted {
+      font-size: 0.72rem;
     }
-    .why-icon { width: 20px; height: 20px; }
     .why-cta-btn {
       display: block;
       max-width: 400px;
@@ -1860,47 +1901,64 @@
 
           <!-- RIGHT: Side by side -->
           <div class="comparison-block">
-            <p class="comparison-note">Same job. Completely different approach.</p>
-            <table class="why-comparison" role="table">
-              <thead>
-                <tr>
-                  <th scope="col" class="col-features">PRODUCT FEATURES</th>
-                  <th scope="col" class="col-other">Other Brands</th>
-                  <th scope="col" class="col-maintane">Maintane</th>
-                </tr>
-              </thead>
-              <tbody>
-              <tr>
-                <th scope="row" data-solution-anim data-stagger-ms="0">Two-ingredient formula</th>
-                <td class="col-other" aria-label="No" data-solution-anim data-stagger-ms="0"><svg class="why-icon" viewBox="0 0 24 24" fill="none" stroke="rgba(250,246,240,0.5)" stroke-width="2.5" stroke-linecap="round" aria-hidden="true"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg></td>
-                <td class="col-maintane" aria-label="Yes" data-solution-anim data-stagger-ms="0"><svg class="why-icon" viewBox="0 0 24 24" fill="none" stroke="#C4A882" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg></td>
-              </tr>
-              <tr>
-                <th scope="row" data-solution-anim data-stagger-ms="60">12B CFU, 6 named bacterial strains</th>
-                <td class="col-other" aria-label="No" data-solution-anim data-stagger-ms="60"><svg class="why-icon" viewBox="0 0 24 24" fill="none" stroke="rgba(250,246,240,0.5)" stroke-width="2.5" stroke-linecap="round" aria-hidden="true"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg></td>
-                <td class="col-maintane" aria-label="Yes" data-solution-anim data-stagger-ms="60"><svg class="why-icon" viewBox="0 0 24 24" fill="none" stroke="#C4A882" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg></td>
-              </tr>
-              <tr>
-                <th scope="row" data-solution-anim data-stagger-ms="120">Kid & pet safe from day one</th>
-                <td class="col-other" aria-label="No" data-solution-anim data-stagger-ms="120"><svg class="why-icon" viewBox="0 0 24 24" fill="none" stroke="rgba(250,246,240,0.5)" stroke-width="2.5" stroke-linecap="round" aria-hidden="true"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg></td>
-                <td class="col-maintane" aria-label="Yes" data-solution-anim data-stagger-ms="120"><svg class="why-icon" viewBox="0 0 24 24" fill="none" stroke="#C4A882" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg></td>
-              </tr>
-              <tr>
-                <th scope="row" data-solution-anim data-stagger-ms="180">Made in a U.S. biosafety-certified lab</th>
-                <td class="col-other" aria-label="No" data-solution-anim data-stagger-ms="180"><svg class="why-icon" viewBox="0 0 24 24" fill="none" stroke="rgba(250,246,240,0.5)" stroke-width="2.5" stroke-linecap="round" aria-hidden="true"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg></td>
-                <td class="col-maintane" aria-label="Yes" data-solution-anim data-stagger-ms="180"><svg class="why-icon" viewBox="0 0 24 24" fill="none" stroke="#C4A882" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg></td>
-              </tr>
-              <tr>
-                <th scope="row" data-solution-anim data-stagger-ms="240">No sulfuric acid, solvents, or surfactants</th>
-                <td class="col-other" aria-label="No" data-solution-anim data-stagger-ms="240"><svg class="why-icon" viewBox="0 0 24 24" fill="none" stroke="rgba(250,246,240,0.5)" stroke-width="2.5" stroke-linecap="round" aria-hidden="true"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg></td>
-                <td class="col-maintane" aria-label="Yes" data-solution-anim data-stagger-ms="240"><svg class="why-icon" viewBox="0 0 24 24" fill="none" stroke="#C4A882" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg></td>
-              </tr>
-              </tbody>
-            </table>
-            <div class="solution-cta" data-solution-anim data-stagger-ms="360">
-              <p class="solution-conversion-note">If you’ve read this far, Maintane is probably a better fit for your system.</p>
-              <a class="why-cta-btn" href="/dosing-guide.html">How to use Maintane</a>
+            <p class="comparison-note">Most septic products sell the same vague promise. Maintane puts the ingredients, culture count, safety positioning, origin, and dose economics right on the table.</p>
+            <div class="stack-table-wrap" data-solution-anim data-stagger-ms="0">
+              <table class="stack-comparison" role="table" aria-label="Maintane septic treatment brand comparison">
+                <thead>
+                  <tr>
+                    <th scope="col">What matters</th>
+                    <th scope="col" class="stack-maintane"><span class="stack-brand">Maintane</span></th>
+                    <th scope="col"><span class="stack-brand">Rid-X</span></th>
+                    <th scope="col"><span class="stack-brand">Green Gobbler</span></th>
+                    <th scope="col"><span class="stack-brand">Cabin Obsession</span></th>
+                    <th scope="col"><span class="stack-brand">Dr. Pooper</span></th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <th scope="row">2 ingredients</th>
+                    <td class="stack-maintane"><span class="stack-yes" aria-label="Yes">✓</span></td>
+                    <td><span class="stack-no" aria-label="No">×</span></td>
+                    <td><span class="stack-no" aria-label="No">×</span></td>
+                    <td><span class="stack-no" aria-label="No">×</span></td>
+                    <td><span class="stack-no" aria-label="No">×</span></td>
+                  </tr>
+                  <tr>
+                    <th scope="row">12B CFU per dose</th>
+                    <td class="stack-maintane"><span class="stack-yes" aria-label="Yes">✓</span></td>
+                    <td><span class="stack-no" aria-label="No">×</span></td>
+                    <td><span class="stack-no" aria-label="No">×</span></td>
+                    <td><span class="stack-no" aria-label="No">×</span></td>
+                    <td><span class="stack-no" aria-label="No">×</span></td>
+                  </tr>
+                  <tr>
+                    <th scope="row">Kid & pet safe, guaranteed</th>
+                    <td class="stack-maintane"><span class="stack-yes" aria-label="Yes">✓</span></td>
+                    <td><span class="stack-no" aria-label="No">×</span></td>
+                    <td><span class="stack-no" aria-label="No">×</span></td>
+                    <td><span class="stack-no" aria-label="No">×</span></td>
+                    <td><span class="stack-no" aria-label="No">×</span></td>
+                  </tr>
+                  <tr>
+                    <th scope="row">Made in USA</th>
+                    <td class="stack-maintane"><span class="stack-yes" aria-label="Yes">✓</span></td>
+                    <td><span class="stack-muted">Check label</span></td>
+                    <td><span class="stack-muted">Check label</span></td>
+                    <td><span class="stack-muted">Check label</span></td>
+                    <td><span class="stack-muted">Check label</span></td>
+                  </tr>
+                  <tr>
+                    <th scope="row">Replaces pumping or routine maintenance</th>
+                    <td class="stack-maintane"><span class="stack-no" aria-label="No">×</span></td>
+                    <td><span class="stack-no" aria-label="No">×</span></td>
+                    <td><span class="stack-no" aria-label="No">×</span></td>
+                    <td><span class="stack-no" aria-label="No">×</span></td>
+                    <td><span class="stack-no" aria-label="No">×</span></td>
+                  </tr>
+                </tbody>
+              </table>
             </div>
+            <p class="stack-footnote">Comparison based on publicly available product pages, labels, and brand claims reviewed May 2026. Always follow each product’s label. Maintane supports routine monthly maintenance and does not replace pumping, inspections, repairs, or professional diagnosis.</p>
           </div>
         </div>
 
@@ -1908,6 +1966,10 @@
         <div class="solution-bottom" data-solution-anim data-stagger-ms="540">
           <p class="solution-bottom-primary">Each dose delivers 12 billion live cultures across six bacterial strains to reinforce septic biology, fight odor, and break down buildup before it becomes expensive damage.</p>
           <p class="solution-bottom-cite">Formulated at Biosafety Level 1 — the same safety tier as yogurt cultures and probiotic supplements.</p>
+          <div class="solution-cta" data-solution-anim data-stagger-ms="360">
+            <p class="solution-conversion-note">If you’ve read this far, Maintane is probably a better fit for your system.</p>
+            <a class="why-cta-btn" href="/dosing-guide.html">How to use Maintane</a>
+          </div>
         </div>
       </div>
     </div>
@@ -2051,7 +2113,8 @@
             <li><a href="/how-it-works.html">How it works</a></li>
             <li><a href="/dosing-guide.html">Dosing Guide</a></li>
             <li><a href="/septic-treatment.html">Septic Guides</a></li>
-          <li><a href="/blog/">Blog</a></li>
+            <li><a href="/review/">Reviews</a></li>
+            <li><a href="/blog/">Blog</a></li>
             <li><a href="/states/">By State</a></li>
           </ul>
         </div>
