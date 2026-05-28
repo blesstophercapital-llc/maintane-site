@@ -2439,7 +2439,7 @@
 
 <div class="announcement-bar" aria-live="polite">
   <button class="announce-arrow" id="announce-prev" aria-label="Previous announcement">&#8249;</button>
-  <div class="announcement-text" id="announcement-text">🌱 Launching May 15, 2026 — Save 10% on natural septic defense</div>
+  <div class="announcement-text" id="announcement-text">Maintane is live - shop premium natural septic defense</div>
   <button class="announce-arrow" id="announce-next" aria-label="Next announcement">&#8250;</button></div>
 <nav class="main-nav">
   <button class="hamburger" onclick="toggleMobileMenu()" aria-label="Menu">
@@ -2706,9 +2706,9 @@ function closeMobileMenu() {
   <div class="maintane-popup__container" role="dialog" aria-labelledby="maintane-popup-title" aria-describedby="maintane-popup-desc">
     <button class="maintane-popup__close" aria-label="Close popup">×</button>
     <div class="maintane-popup__content">
-      <div class="maintane-popup__kicker">LAUNCHING MAY 15, 2026</div>
+      <div class="maintane-popup__kicker">MONTHLY SEPTIC DEFENSE</div>
       <h2 id="maintane-popup-title" class="maintane-popup__headline">Protect your tank. Save 10%.</h2>
-      <p id="maintane-popup-desc" class="maintane-popup__subhead">Get launch-day access to Maintane’s natural septic defense before the price goes up.</p>
+      <p id="maintane-popup-desc" class="maintane-popup__subhead">Get Maintane updates and 10% off premium natural septic defense.</p>
       <form class="maintane-popup__form" id="maintane-popup-form">
         <input type="email" class="maintane-popup__input" id="maintane-popup-email" placeholder="you@example.com" required aria-label="Email address">
         <button type="submit" class="maintane-popup__submit">Get 10% off</button>
@@ -2727,24 +2727,12 @@ function closeMobileMenu() {
 <script src="/js/footer-waitlist.js" defer></script>
 <script>
 (function() {
-  var TARGET = new Date('2026-05-15T00:00:00-04:00').getTime();
   var SHOPIFY = 'https://getmaintane.com/shop.html';
   var AUTO_MS = 6000;
   var FADE_MS = 200;
 
   function slide1Html() {
-    var diff = TARGET - Date.now();
-    if (diff <= 0) {
-      return '\ud83c\udf89 Maintane is live \u2014 <a href="' + SHOPIFY + '" class="announce-link">Shop now \u2192</a>';
-    }
-    var d = Math.floor(diff / 86400000);
-    var h = Math.floor((diff % 86400000) / 3600000);
-    var m = Math.floor((diff % 3600000) / 60000);
-    var s = Math.floor((diff % 60000) / 1000);
-    return '\ud83c\udf31 Launching May 15, 2026 \u2014 ' +
-           '<span id="countdown">' + d + ' DAYS ' + h + ' HRS ' + m + ' MIN ' + s + ' SEC</span>' +
-           '<span class="announce-sep"> | </span>' +
-           '<span class="announce-tail">Save 10% on <a href="#footer-waitlist-form" class="announce-link">natural septic defense</a></span>';
+    return '\ud83c\udf89 Maintane is live \u2014 <a href="' + SHOPIFY + '" class="announce-link">Shop now \u2192</a>';
   }
   var slides = [
     slide1Html,
@@ -2759,14 +2747,12 @@ function closeMobileMenu() {
 
   var idx = 0;
   var autoTimer = null;
-  var countdownTimer = null;
   var fading = false;
 
   function render(animate) {
     if (animate === false) {
       container.innerHTML = slides[idx]();
       container.style.opacity = '1';
-      manageCountdown();
       return;
     }
     fading = true;
@@ -2775,38 +2761,7 @@ function closeMobileMenu() {
       container.innerHTML = slides[idx]();
       container.style.opacity = '1';
       fading = false;
-      manageCountdown();
     }, FADE_MS);
-  }
-
-  function updateCountdownText() {
-    if (idx !== 0 || fading) return;
-    var diff = TARGET - Date.now();
-    if (diff <= 0) {
-      // Swap to "live" message permanently
-      container.innerHTML = slides[0]();
-      stopCountdown();
-      return;
-    }
-    var el = document.getElementById('countdown');
-    if (!el) return;
-    var d = Math.floor(diff / 86400000);
-    var h = Math.floor((diff % 86400000) / 3600000);
-    var m = Math.floor((diff % 3600000) / 60000);
-    var s = Math.floor((diff % 60000) / 1000);
-    el.textContent = d + ' DAYS ' + h + ' HRS ' + m + ' MIN ' + s + ' SEC';
-  }
-
-  function startCountdown() {
-    stopCountdown();
-    countdownTimer = setInterval(updateCountdownText, 1000);
-  }
-  function stopCountdown() {
-    if (countdownTimer) { clearInterval(countdownTimer); countdownTimer = null; }
-  }
-  function manageCountdown() {
-    if (idx === 0 && (TARGET - Date.now()) > 0) startCountdown();
-    else stopCountdown();
   }
 
   function startAuto() {
@@ -2831,9 +2786,9 @@ function closeMobileMenu() {
 
   document.addEventListener('visibilitychange', function() {
     if (document.visibilityState === 'hidden') {
-      stopAuto(); stopCountdown();
+      stopAuto();
     } else {
-      startAuto(); manageCountdown();
+      startAuto();
     }
   });
 

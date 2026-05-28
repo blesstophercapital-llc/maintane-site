@@ -2599,7 +2599,16 @@
     </div>
   </section>
 
-  <!-- Section 3: Common questions (cream, accordion) -->
+  <!-- Section 3: Related monthly routine guides (cream) -->
+  <section class="dose-section section-cream">
+    <div class="dose-inner-narrow">
+      <p class="dose-section-eyebrow">MONTHLY ROUTINE</p>
+      <h2 class="dose-section-headline">Build the full septic defense habit.</h2>
+      <p class="dose-section-sub">Dosing is one step in a bigger routine. Pair this guide with the <a href="/monthly-septic-treatment.html">monthly septic treatment guide</a>, the <a href="/blog/how-often-septic-treatment.html">frequency guide</a>, the <a href="/blog/monthly-septic-maintenance-checklist.html">monthly checklist</a>, and the <a href="/blog/how-to-maintain-septic-tank.html">septic tank maintenance guide</a>.</p>
+    </div>
+  </section>
+
+  <!-- Section 4: Common questions (cream, accordion) -->
   <section class="dose-section section-cream">
     <div class="dose-inner-narrow">
       <p class="dose-section-eyebrow">COMMON QUESTIONS</p>
@@ -2753,14 +2762,12 @@ function closeMobileMenu() {
 
   var idx = 0;
   var autoTimer = null;
-  var countdownTimer = null;
   var fading = false;
 
   function render(animate) {
     if (animate === false) {
       container.innerHTML = slides[idx]();
       container.style.opacity = '1';
-      manageCountdown();
       return;
     }
     fading = true;
@@ -2769,24 +2776,9 @@ function closeMobileMenu() {
       container.innerHTML = slides[idx]();
       container.style.opacity = '1';
       fading = false;
-      manageCountdown();
     }, FADE_MS);
   }
 
-  function updateCountdownText() {
-    return;
-  }
-
-  function startCountdown() {
-    stopCountdown();
-    countdownTimer = setInterval(updateCountdownText, 1000);
-  }
-  function stopCountdown() {
-    if (countdownTimer) { clearInterval(countdownTimer); countdownTimer = null; }
-  }
-  function manageCountdown() {
-    stopCountdown();
-  }
 
   function startAuto() {
     stopAuto();
@@ -2810,9 +2802,9 @@ function closeMobileMenu() {
 
   document.addEventListener('visibilitychange', function() {
     if (document.visibilityState === 'hidden') {
-      stopAuto(); stopCountdown();
+      stopAuto();
     } else {
-      startAuto(); manageCountdown();
+      startAuto();
     }
   });
 

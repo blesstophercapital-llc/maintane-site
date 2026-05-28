@@ -1,4 +1,4 @@
-/* Pre-launch waitlist popup — getmaintane.com
+/* Discount signup popup - getmaintane.com
  * Shows after content engagement, deeper scroll intent, or exit intent.
  * Dismissals persist briefly so the popup does not fight every page view.
  * Submits to Klaviyo's client subscriptions API; adds profile to list Ue3eN8.

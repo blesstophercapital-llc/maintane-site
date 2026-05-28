@@ -1,5 +1,5 @@
-/* Footer waitlist capture — getmaintane.com
- * Submits to Klaviyo Pre-Launch Waitlist (Ue3eN8) with signup_source=footer_waitlist.
+/* Footer discount signup capture - getmaintane.com
+ * Submits to Klaviyo list Ue3eN8 while preserving signup_source=footer_waitlist.
  * Self-contained IS_STAGING check so it works whether or not popup.js is loaded.
  */
 (function () {

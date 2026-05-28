@@ -1,4 +1,4 @@
-/* Pre-launch waitlist popup — getmaintane.com
+/* Discount signup popup - getmaintane.com
  * Independent from the main site stylesheet. Uses literal brand color values
  * (not CSS custom properties) so it renders correctly even if loaded in a
  * context where :root vars aren't defined.
